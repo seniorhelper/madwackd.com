@@ -53,18 +53,22 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isInt
 document.querySelectorAll(".clap").forEach(function(c){io.observe(c)});
 }
 
-var el2=document.getElementById("earthloop");if(el2&&!RM){var p2=el2.play();if(p2&&p2.catch)p2.catch(function(){})}
+var SAVE=!!(navigator.connection&&navigator.connection.saveData);
+function autoLoop(vid,ok){if(!vid||RM||SAVE)return;
+if(!("IntersectionObserver" in window)){var q0=vid.play();if(q0&&q0.catch)q0.catch(function(){});return}
+new IntersectionObserver(function(en){if(!ok())return;if(en[0].isIntersecting){var q=vid.play();if(q&&q.catch)q.catch(function(){})}else if(!vid.paused)vid.pause()},{threshold:.15}).observe(vid)}
+var el2=document.getElementById("earthloop");autoLoop(el2,function(){return true});
 var v=document.getElementById("sting");
 if(v){
 var tc=document.getElementById("tc"),sb=document.getElementById("sound"),mute=document.getElementById("quiet"),silentSrc=null;
 var fps=24;
 function pad(n){return(n<10?"0":"")+n}
 v.addEventListener("timeupdate",function(){if(!tc)return;var t=v.currentTime,s=Math.floor(t);tc.textContent="REC 00:00:"+pad(s)+":"+pad(Math.floor((t-s)*fps))});
-if(!RM){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
+v.muted=true;autoLoop(v,function(){return v.muted});
 function backToSilent(){
 if(!silentSrc)return;v.pause();v.removeAttribute("src");v.loop=true;v.muted=true;
 while(v.firstChild)v.removeChild(v.firstChild);
-silentSrc.forEach(function(s){v.appendChild(s)});silentSrc=null;v.load();if(!RM){var q=v.play();if(q&&q.catch)q.catch(function(){})}
+silentSrc.forEach(function(s){v.appendChild(s)});silentSrc=null;v.load();if(!RM&&!SAVE){var q=v.play();if(q&&q.catch)q.catch(function(){})}
 if(sb)sb.hidden=false;if(mute)mute.hidden=true;
 }
 if(sb){sb.addEventListener("click",function(){

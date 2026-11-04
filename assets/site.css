@@ -337,14 +337,26 @@ body{font-size:16px}
 }
 .nf .eyes{display:block}
 @media (max-width:640px){.hide-m{display:none}}
-.mw-logo{position:relative;display:inline-block;flex:none;line-height:0;transform-style:preserve-3d;animation:mwFloat 6s ease-in-out infinite;filter:drop-shadow(0 6px 6px rgba(120,20,90,.28)) drop-shadow(0 14px 18px rgba(30,120,200,.18))}
-.mw-logo img{display:block;width:100%;height:auto;animation:mwJelly 3.2s ease-in-out infinite;transform-origin:50% 90%}
-.mw-logo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 46%,rgba(255,255,255,0) 60%) 0 0/250% 100% no-repeat;-webkit-mask:url(/assets/img/madwackd-logo-3d-600.webp) center/100% 100% no-repeat;mask:url(/assets/img/madwackd-logo-3d-600.webp) center/100% 100% no-repeat;mix-blend-mode:screen;animation:mwShine 4.5s ease-in-out infinite}
-.mw-head{width:170px}
+.mw-logo{position:relative;display:inline-block;flex:none;line-height:0;animation:mwFloat 6s ease-in-out infinite;filter:drop-shadow(0 6px 6px rgba(120,20,90,.28)) drop-shadow(0 14px 18px rgba(30,120,200,.18));transition:filter .25s;-webkit-tap-highlight-color:transparent}
+.mw-tilt{position:relative;display:block;transform-origin:50% 70%;will-change:transform}
+.mw-tilt img{display:block;width:100%;height:auto;animation:mwJelly 3.2s ease-in-out infinite;transform-origin:50% 90%;-webkit-user-drag:none;user-select:none}
+.mw-tilt::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,.62) 46%,rgba(255,255,255,0) 56%) 0 0/250% 100% no-repeat;-webkit-mask:url(/assets/img/madwackd-logo-3d-600.webp) center/100% 100% no-repeat;mask:url(/assets/img/madwackd-logo-3d-600.webp) center/100% 100% no-repeat;mix-blend-mode:screen;animation:mwShine 4.5s ease-in-out infinite}
+.mw-logo.is-hot{filter:drop-shadow(0 8px 8px rgba(120,20,90,.32)) drop-shadow(0 18px 26px rgba(255,46,166,.32)) drop-shadow(0 0 18px rgba(43,180,255,.35))}
+.mw-head{width:196px}
 .mw-foot{width:300px;max-width:100%;margin-bottom:12px}
+.mw-hero{display:block;width:clamp(260px,31vw,420px);margin:0 0 12px -6px;cursor:pointer;animation-duration:5s}
+.mw-hero .mw-tilt::after{animation-duration:3.6s}
 .brand:hover .mw-logo img,.mw-logo:hover img{animation-duration:.9s}
-@keyframes mwFloat{0%,100%{transform:perspective(700px) rotateY(-9deg) rotateX(5deg) translateY(0)}50%{transform:perspective(700px) rotateY(9deg) rotateX(-4deg) translateY(-5px)}}
+@keyframes mwFloat{0%,100%{transform:perspective(700px) rotateY(-9deg) rotateX(5deg) translateY(0)}50%{transform:perspective(700px) rotateY(9deg) rotateX(-4deg) translateY(-6px)}}
 @keyframes mwJelly{0%,100%{transform:scale(1,1)}30%{transform:scale(1.035,.97)}45%{transform:scale(.98,1.03)}60%{transform:scale(1.01,.995)}}
 @keyframes mwShine{0%,25%{background-position:120% 0}70%,100%{background-position:-60% 0}}
-@media (max-width:720px){.mw-head{width:132px}}
-@media (prefers-reduced-motion:reduce){.mw-logo,.mw-logo img,.mw-logo::after{animation:none}}
+.mw-spark{position:fixed;inset:0;pointer-events:none;z-index:210}
+.top .wrap{height:80px}
+@media (max-width:900px){.nav{top:80px}}
+.brand .mw-logo{transition:opacity .35s,visibility .35s,filter .25s}
+.top.hero-logo-on .brand .mw-logo{opacity:0;visibility:hidden}
+@media (max-width:720px){.mw-head{width:150px}}
+@media (max-width:640px){.top .wrap{height:64px}.nav{top:64px}.mw-hero{width:min(270px,78vw);margin:2px 0 8px -4px}.hero-cta-top{margin-top:12px;margin-bottom:14px}.hero-cta-top .btn{flex:1 1 140px}}
+@media (prefers-reduced-motion:reduce){.mw-logo,.mw-tilt img,.mw-tilt::after{animation:none}}
+.hero-cta-top{margin:14px 0 20px}
+.form-card{scroll-margin-top:96px}
