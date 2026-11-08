@@ -1,0 +1,12 @@
+/* THe EArtH mOVIe name mark (shared with madwackd.ai). v1 2026-11-08 */
+.tem-sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.tem-mark{display:inline-block;font-family:var(--disp,Poppins,Inter,sans-serif);font-weight:700;letter-spacing:.01em;line-height:1;white-space:nowrap;
+  background:linear-gradient(100deg,#0092C2 0%,#1B5FFF 30%,#8B3DFF 52%,#2F8F00 74%,#E07A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:.018em #15121F;paint-order:stroke fill;filter:drop-shadow(0 2px 0 rgba(21,18,31,.18))}
+.tem-mark i{font-style:normal;font-size:.82em;letter-spacing:.03em;position:relative;top:-.02em}
+.tem-mark.lg{font-size:clamp(2.2rem,6.5vw,4.6rem);-webkit-text-stroke-width:.02em}
+.tem-mark.md{font-size:clamp(1.7rem,4.2vw,2.8rem)}
+.tem-sub{display:block;margin-top:.25em;font-size:.55em;line-height:1.15}
+.tem-inline{display:inline;font-weight:700;font-family:var(--disp,Poppins,Inter,sans-serif);letter-spacing:.01em;color:inherit}
+.tem-inline i{font-style:normal;font-size:.86em;letter-spacing:.03em}
+@media (max-width:560px){.tem-mark{white-space:normal}}
