@@ -131,7 +131,7 @@ f.addEventListener("change",function(e){if(e.target.name!=="Reaching out about")
 if(hint){if(h){hint.textContent=h;hint.classList.add("on")}else{hint.textContent="";hint.classList.remove("on")}}
 if(msg)msg.setAttribute("placeholder",PH[e.target.value]||base)});
 var q=new URLSearchParams(location.search).get("about");
-if(q){var m={investing:"Investing",talent:"Acting or voice talent",partnership:"Partnership",collab:"Collaboration",produce:"Hire us to produce",press:"Press",friend:"Friend of the studio"}[q];if(m)setAbout(f,m)}
+if(q){var m={investing:"Partnership",talent:"Acting or voice talent",partnership:"Partnership",collab:"Collaboration",produce:"Hire us to produce",press:"Press",friend:"Friend of the studio"}[q];if(m)setAbout(f,m)}
 f.addEventListener("submit",function(e){
 e.preventDefault();
 var st=f.querySelector(".status"),btn=f.querySelector("button[type=submit]");
