@@ -396,3 +396,8 @@ body{font-size:16px}
 .nav a{white-space:nowrap}
 #work{scroll-margin-top:90px}
 @media (max-width:640px){.ai-bar{font-size:.8rem}.ai-bar .wrap{gap:2px 8px;padding-top:6px;padding-bottom:6px}.ai-more,.ai-dot{display:none}}
+.tk-bar{background:linear-gradient(90deg,#0b3d1f,#15121F)}
+.tk-bar b{color:#c8ff5a}
+.tk-block{background:#f3ffe0;border:2px solid #8fe000;border-radius:14px;padding:14px 16px;margin:0 0 16px}
+.tk-block p{margin:0 0 6px}
+.tk-block .tk-climate{font-size:.9rem;margin:0}
